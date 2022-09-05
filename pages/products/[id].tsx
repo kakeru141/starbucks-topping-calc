@@ -53,13 +53,13 @@ export const ProductItem: NextPage<P> = ({ data }) => {
       <HeadContainer>
         <meta name="description" content={`${data.productName}トッピングを選択するだけで、合計価格を計算します。注文時にもたつきたくない、1000円チケットをギリギリまで使いたい方は是非活用してください`} />
         <meta name='keywords' content={`スタバ, トッピング, 計算, 価格, ${data.productName}`}/>
-        <link rel='canonical' href='http://localhost:3000'/>
-        <meta property="og:url" content="http://localhost:3000" />
+        <link rel='canonical' href={`https://starbucks-topping-calc.vercel.app/${data._id}`}/>
+        <meta property="og:url" content={`https://starbucks-topping-calc.vercel.app/${data._id}`} />
         <meta property="og:type" content="article" />
         <meta property="og:title" content={`${data.productName}のトッピング計算`} />
         <meta property="og:description" content={`${data.productName}のトッピング価格を計算します`} />
         <meta property="og:site_name" content={`${data.productName}のトッピング計算`}/>
-        <meta property="og:image" content="http://localhost:3000/public/favicons/favicon-32x32.png" />
+        <meta property="og:image" content="https://starbucks-topping-calc.vercel.app/public/favicons/favicon-32x32.png" />
         <meta name='twitter:card' content='summary'/>
         <meta name="twitter:site" content='@kakeru_FIRE'/>
       </HeadContainer>
@@ -462,7 +462,7 @@ export default ProductItem
 
 export async function getStaticPaths() {
   try {
-    const res = await fetch('http://localhost:5000/api/get')
+    const res = await fetch('https://starbucks-topping-calc.vercel.app/api/get')
     const datas = (await res.json()) as Product[]
     const paths = await datas.map((data: Product) => ({
       params: {
@@ -483,7 +483,7 @@ export async function getStaticPaths() {
 }
 export async function getStaticProps({ params }: { params: { id: string } }) {
   try {
-    const res = await fetch('http://localhost:5000/api/get')
+    const res = await fetch('https://starbucks-topping-calc.vercel.app/api/get')
     const datas = (await res.json()) as Product[]
     const data = await datas.find((item) => item._id === params.id)
     return {

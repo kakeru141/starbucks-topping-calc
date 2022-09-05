@@ -15,7 +15,7 @@ const Add: NextPage = () => {
     await e.preventDefault()
 
     try {
-      await axios.post('http://localhost:5000/api/add', addProduct)
+      await axios.post('https://starbucks-topping-calc.vercel.app/api/add', addProduct)
       router.push('/control')
     } catch (err) {
       console.log(err)
