@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "tsc -p tsconfig.server.json && cross-env NODE_ENV=development node ./dist/index.js",
-    "build": "tsc -p tsconfig.server.json",
+    "build:next": "next build",
+    "build:server": "tsc --project tsconfig.server.json",
     "start": "next start",
     "lint": "next lint"
   },
