@@ -26,7 +26,7 @@ app.prepare()
     })
     server.use(bodyParser.json())
     server.use(express.json())
-    server.use('/api', router)
+    server.use('/test', router)
     mongoose.connect(process.env.DB_URL || '')
     .catch((err) => console.error(err))
 

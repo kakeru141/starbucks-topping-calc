@@ -25,7 +25,7 @@ app.prepare()
     });
     server.use(body_parser_1.default.json());
     server.use(express_1.default.json());
-    server.use('/api', router_1.router);
+    server.use('/test', router_1.router);
     mongoose_1.default.connect(process.env.DB_URL || '')
         .catch(function (err) { return console.error(err); });
     server.all('*', function (req, res) {
