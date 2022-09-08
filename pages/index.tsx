@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import { Product } from '../src/types/productType'
-import {Container,} from '@mui/material'
+import {Container} from '@mui/material'
 import { useState } from 'react'
 import Header from '../src/components/organisms/Header'
 import Search from '../src/components/molcules/Search'

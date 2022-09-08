@@ -4,8 +4,9 @@ export const router = express.Router();
 
 router.get("/get", async (req, res) => {
     try{
-        const allProducts = await Products.find({})
-        res.status(200).json(allProducts)
+        // const allProducts = await Products.find({})
+        // res.status(200).json(allProducts)
+        res.send('hello')
     }catch(err){
         console.log(err)
     }
