@@ -30,6 +30,9 @@ app.prepare()
     mongoose.connect(process.env.DB_URL || '')
     .catch((err) => console.error(err))
 
+    server.get('/get', (req, res) => {
+        res.json({msg: 'hello'})
+    })
 
     server.all('*', (req: Request, res: Response) => {
         return handle(req, res)

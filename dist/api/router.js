@@ -44,26 +44,20 @@ var express_1 = __importDefault(require("express"));
 var schema_1 = require("./schema");
 exports.router = express_1.default.Router();
 exports.router.get("/get", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var allProducts, err_1;
     return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, schema_1.Products.find({})];
-            case 1:
-                allProducts = _a.sent();
-                res.status(200).json(allProducts);
-                return [3 /*break*/, 3];
-            case 2:
-                err_1 = _a.sent();
-                console.log(err_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
+        try {
+            // const allProducts = await Products.find({})
+            // res.status(200).json(allProducts)
+            res.send('hello');
         }
+        catch (err) {
+            console.log(err);
+        }
+        return [2 /*return*/];
     });
 }); });
 exports.router.post('/add', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var createProduct, err_2;
+    var createProduct, err_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -74,8 +68,8 @@ exports.router.post('/add', function (req, res) { return __awaiter(void 0, void 
                 res.status(200).json(createProduct);
                 return [3 /*break*/, 3];
             case 2:
-                err_2 = _a.sent();
-                console.log(err_2);
+                err_1 = _a.sent();
+                console.log(err_1);
                 return [3 /*break*/, 3];
             case 3: return [2 /*return*/];
         }

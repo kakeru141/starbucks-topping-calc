@@ -28,6 +28,9 @@ app.prepare()
     server.use('/test', router_1.router);
     mongoose_1.default.connect(process.env.DB_URL || '')
         .catch(function (err) { return console.error(err); });
+    server.get('/get', function (req, res) {
+        res.json({ msg: 'hello' });
+    });
     server.all('*', function (req, res) {
         return handle(req, res);
     });
