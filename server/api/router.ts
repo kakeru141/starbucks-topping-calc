@@ -6,7 +6,7 @@ router.get("/get", async (req, res) => {
     try{
         // const allProducts = await Products.find({})
         // res.status(200).json(allProducts)
-        res.send('hello')
+        res.json({message: 'Hello'})
     }catch(err){
         console.log(err)
     }

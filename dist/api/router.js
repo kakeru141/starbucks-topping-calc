@@ -48,7 +48,7 @@ exports.router.get("/get", function (req, res) { return __awaiter(void 0, void 0
         try {
             // const allProducts = await Products.find({})
             // res.status(200).json(allProducts)
-            res.send('hello');
+            res.json({ message: 'Hello' });
         }
         catch (err) {
             console.log(err);

@@ -8,7 +8,8 @@ dotenv.config()
 
 const dev = process.env.NODE_ENV === 'development'
 const port = process.env.PORT
-const app = next({ dev })
+const app = next({})
+// const app = next({ dev })
 const handle = app.getRequestHandler()
 
 app.prepare()
