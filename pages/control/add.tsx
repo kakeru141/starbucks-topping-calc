@@ -1,4 +1,4 @@
-import { FC, FormEvent } from 'react'
+import { FormEvent } from 'react'
 import axios from 'axios'
 import EditAddFromFunctions from '../../src/components/molcules/EditAddFromFunctions'
 import { useRecoilState } from 'recoil'
@@ -15,7 +15,7 @@ const Add: NextPage = () => {
     await e.preventDefault()
 
     try {
-      await axios.post('https://starbucks-topping-calc.vercel.app/api/add', addProduct)
+      await axios.post(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`, addProduct)
       router.push('/control')
     } catch (err) {
       console.log(err)

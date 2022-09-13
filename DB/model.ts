@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+import mongoose, { models, Schema } from "mongoose"
 
-export const Products = mongoose.model('Products', new mongoose.Schema({
+const productSchema: Schema = new mongoose.Schema({
     productName: String,
     category: String,
     size: {
@@ -965,4 +965,6 @@ export const Products = mongoose.model('Products', new mongoose.Schema({
             },
         },
     },
-}, {versionKey: false, timestamps: true}))
+}, {versionKey: false, timestamps: true})
+
+export const Product = models.Product || mongoose.model('Product', productSchema)

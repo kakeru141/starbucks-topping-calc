@@ -26,7 +26,7 @@ const EditHome: NextPage<P> = ({ datas }) => {
 
   const deleteProduct = async (id: string) => {
     try{
-      axios.delete('https://starbucks-topping-calc.vercel.app/api/delete', { data: { id } })
+      axios.delete(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`, { data: { id } })
       router.reload()
     }catch (err) {
       console.log(err)
@@ -88,7 +88,7 @@ export default EditHome
 
 export async function getStaticProps() {
   try {
-    const res = await fetch('https://starbucks-topping-calc.vercel.app/api/get')
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`)
     const datas = await res.json()
 
     return {
