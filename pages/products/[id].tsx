@@ -462,7 +462,8 @@ export default ProductItem
 
 export async function getStaticPaths() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`)
+    // const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`)
+    const res = await fetch(`/api/v1`)
     const datas = (await res.json()) as Product[]
     const paths = await datas.map((data: Product) => ({
       params: {
@@ -483,7 +484,8 @@ export async function getStaticPaths() {
 }
 export async function getStaticProps({ params }: { params: { id: string } }) {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`)
+    // const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`)
+    const res = await fetch(`/api/v1`)
     const datas = (await res.json()) as Product[]
     const data = await datas.find((item) => item._id === params.id)
     return {
