@@ -9,8 +9,9 @@ mongoose.connect(process.env.DB_URL || '')
 export default async function handler (req: NextApiRequest, res: NextApiResponse) {
     if(req.method === 'GET') {
         try{
-            const allProducts = await Product.find({})
-            res.status(200).json(allProducts)
+            // const allProducts = await Product.find({})
+            // res.status(200).json(allProducts)
+            res.status(200).json({msg: 'hello'})
         }catch (err) {
             console.log(err)
         }
