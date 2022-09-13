@@ -2,16 +2,17 @@ import mongoose from "mongoose";
 import { NextApiRequest, NextApiResponse } from "next";
 import { Product } from "../../DB/model";
 
-mongoose.connect(process.env.DB_URL || '')
-.then(() => console.log('DB connected'))
-.catch((err) => console.error(`DB connect error: ${err}`))
 
 export default async function handler (req: NextApiRequest, res: NextApiResponse) {
+
+    mongoose.connect(process.env.DB_URL || '')
+    .then(() => console.log('DB connected'))
+    .catch((err) => console.error(`DB connect error: ${err}`))
+
     if(req.method === 'GET') {
         try{
-            // const allProducts = await Product.find({})
-            // res.status(200).json(allProducts)
-            res.status(200).json({msg: 'hello'})
+            const allProducts = await Product.find({})
+            res.status(200).json(allProducts)
         }catch (err) {
             console.log(err)
         }
