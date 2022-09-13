@@ -1,5 +1,10 @@
+import mongoose from "mongoose";
 import { NextApiRequest, NextApiResponse } from "next";
 import { Product } from "../../DB/model";
+
+mongoose.connect(process.env.DB_URL || '')
+.then(() => console.log('DB connected'))
+.catch((err) => console.error(`DB connect error: ${err}`))
 
 export default async function handler (req: NextApiRequest, res: NextApiResponse) {
     if(req.method === 'GET') {

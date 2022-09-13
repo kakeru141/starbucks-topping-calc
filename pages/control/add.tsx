@@ -15,7 +15,7 @@ const Add: NextPage = () => {
     await e.preventDefault()
 
     try {
-      await axios.post(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`, addProduct)
+      await axios.post('api/v1', addProduct)
       router.push('/control')
     } catch (err) {
       console.log(err)

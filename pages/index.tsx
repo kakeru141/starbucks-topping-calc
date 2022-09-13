@@ -7,6 +7,7 @@ import Header from '../src/components/organisms/Header'
 import Search from '../src/components/molcules/Search'
 import HeadContainer from '../src/components/organisms/HeadContainer'
 import ProductCategory from '../src/components/organisms/ProductCategory'
+import axios from 'axios'
 
 type P = {
   datas: Product[]
@@ -14,6 +15,7 @@ type P = {
 
 const Home: NextPage<P> = ({ datas }) => {
   const [searchDatas, setSearchDatas] = useState(datas)
+  console.log(process.env.NEXT_PUBLIC_SITE_URL)
 
   return (
     <>
@@ -72,9 +74,10 @@ export default Home
 
 export async function getStaticProps() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`)
-    const datas = await res.json()
-    // const datas = await axios.get('/api/v1')
+    // const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`)
+    // const res = await fetch(`${SITE_URL}/api/v1`)
+    // const datas = await res.json()
+    const datas = await axios.get(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`)
 
     return {
       props: {

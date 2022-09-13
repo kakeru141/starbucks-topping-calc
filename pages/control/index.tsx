@@ -26,7 +26,7 @@ const EditHome: NextPage<P> = ({ datas }) => {
 
   const deleteProduct = async (id: string) => {
     try{
-      axios.delete(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`, { data: { id } })
+      axios.delete('/api/v1', { data: { id } })
       router.reload()
     }catch (err) {
       console.log(err)
