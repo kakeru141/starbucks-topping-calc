@@ -8,7 +8,7 @@ import { Product } from "../../DB/model";
     .catch((err) => console.error(`DB connect error: ${err}`))
 
 export default async function handler (req: NextApiRequest, res: NextApiResponse) {
-
+    console.log(req.method)
     if(req.method === 'GET') {
         try{
             const allProducts = await Product.find({})
@@ -26,7 +26,8 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
     }else if (req.method === 'DELETE') {
         try{
             const id = await req.body.id
-            Product.findByIdAndRemove(id)
+            await Product.findByIdAndRemove(id)
+            res.end()
         }catch (err) {
             console.log(err)
         }

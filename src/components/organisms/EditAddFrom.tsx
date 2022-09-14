@@ -29,7 +29,6 @@ type P = {
 
 const EditAddFrom: FC<P> = ({ onChange, backPage, onSubmit }) => {
   const addProduct = useRecoilValue(addProductAtom)
-console.log(addProduct.category === 'others')
   return (
     <Container component="main" maxWidth="md" sx={{ p: 3 }}>
       <Typography variant="h5" sx={{ m: 'auto', textAlign: 'center' }}>
