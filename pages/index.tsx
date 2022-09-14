@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 import Link from 'next/link'
 import { Product } from '../src/types/productType'
 import {Container} from '@mui/material'
@@ -74,7 +74,6 @@ export default Home
 export async function getStaticProps() {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`)
-    // const res = await fetch(`/api/v1`)
     const datas = await res.json()
 
     return {
