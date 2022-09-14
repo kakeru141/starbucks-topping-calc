@@ -8,7 +8,6 @@ import { Product } from "../../DB/model";
     .catch((err) => console.error(`DB connect error: ${err}`))
 
 export default async function handler (req: NextApiRequest, res: NextApiResponse) {
-    console.log(req.method)
     if(req.method === 'GET') {
         try{
             const allProducts = await Product.find({})
