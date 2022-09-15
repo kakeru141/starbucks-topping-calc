@@ -13,7 +13,7 @@ type P = {
   data: Product;
 };
 
-const editPage: NextPage<P> = ({ data }) => {
+const EditPage: NextPage<P> = ({ data }) => {
   const router = useRouter();
   const [editProduct, setEditProduct] = useRecoilState(addProductAtom);
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -32,7 +32,7 @@ const editPage: NextPage<P> = ({ data }) => {
 
   useEffect(() => {
     setEditProduct(data);
-  }, []);
+  }, [data, setEditProduct]);
 
   return (
     <>
