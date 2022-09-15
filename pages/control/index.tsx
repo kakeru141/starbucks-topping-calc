@@ -57,11 +57,11 @@ const EditHome: NextPage<P> = ({ datas }) => {
             {searchDatas.map((data, index) => (
               <ListItem key={index}>
                 <ListItemText primary={data.productName} />
-                {/* <Link href={`/control/edit/${data._id}`}>
+                <Link href={`/control/edit/${data._id}`}>
                 <a>
                   <Button variant='contained'>編集</Button>
                 </a>
-              </Link>   */}
+              </Link>  
                 <Button
                   onClick={() => {
                     deleteProduct(data._id);

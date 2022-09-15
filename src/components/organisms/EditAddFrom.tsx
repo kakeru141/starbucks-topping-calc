@@ -47,6 +47,7 @@ const EditAddFrom: FC<P> = memo(({ onChange, backPage, onSubmit }) => {
                     label='商品名'
                     required
                     fullWidth
+                    value={addProduct.productName}
                     name='productName'
                     onChange={onChange}
                   />

@@ -19,7 +19,7 @@ const Add: NextPage = () => {
       await axios.post('/api/v1', addProduct);
       router.push('/control');
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 

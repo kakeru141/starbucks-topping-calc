@@ -1,3 +1,4 @@
+import { error } from 'console';
 import mongoose from 'mongoose';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Product } from '../../DB/model';
@@ -16,14 +17,14 @@ export default async function handler(
       const allProducts = await Product.find({});
       res.status(200).json(allProducts);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   } else if (req.method === 'POST') {
     try {
       const createProduct = await Product.create(req.body);
       res.status(200).json(createProduct);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   } else if (req.method === 'DELETE') {
     try {
@@ -31,11 +32,18 @@ export default async function handler(
       await Product.findByIdAndRemove(id);
       res.end();
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   } else if (req.method === 'PUT') {
-    //現在未実装
-    console.log('PUT');
+    try {
+        console.log('req body:', req.body)
+        const id = await req.body.id
+        const data = await req.body.data
+        await Product.findByIdAndUpdate(id, data)
+        res.end()
+    }catch (err) {
+        console.error(error)
+    }
   } else {
     console.log('メソッドが例外です');
   }
