@@ -348,8 +348,8 @@ const ProductFormSize: FC<P> = memo(
             '@media screen and (max-width: 600px)': {
               flexDirection: 'column',
               width: '100px',
-              m: 'auto'
-            }
+              m: 'auto',
+            },
           }}>
           {Object.entries(data.shop).map(([key, value], index) => {
             if (value.value) {
@@ -380,8 +380,8 @@ const ProductFormSize: FC<P> = memo(
             '@media screen and (max-width: 600px)': {
               flexDirection: 'column',
               width: '100px',
-              m: 'auto'
-            }
+              m: 'auto',
+            },
           }}>
           {Object.entries(data.takeout).map(([key, value], index) => {
             if (value.value) {
