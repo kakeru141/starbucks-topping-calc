@@ -49,7 +49,7 @@ const EditPage: NextPage<P> = ({ data }) => {
   );
 };
 
-export default editPage;
+export default EditPage;
 export async function getStaticPaths() {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`);
