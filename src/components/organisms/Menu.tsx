@@ -9,7 +9,6 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  Typography,
 } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { useRouter } from 'next/router';
@@ -24,14 +23,14 @@ const Menu: FC = memo(() => {
   return (
     <>
       <IconButton onClick={openToggle}>
-        <MenuIcon fontSize='large' />
+        <MenuIcon fontSize='medium' />
       </IconButton>
       <Drawer anchor='left' open={open} onClose={openToggle}>
         <Box p='16px' component='nav'>
           <IconButton
             onClick={openToggle}
             sx={{ display: 'flex', m: 'auto 0 auto auto' }}>
-            <ArrowBackIosNewIcon fontSize='large' />
+            <ArrowBackIosNewIcon fontSize='medium' />
           </IconButton>
           <List disablePadding>
             <ListItem>

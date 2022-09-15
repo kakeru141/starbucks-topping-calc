@@ -30,6 +30,7 @@ const Search: FC<P> = memo(
     return (
       <>
         <TextField
+          size='small'
           InputProps={{
             startAdornment: (
               <InputAdornment position='start'>

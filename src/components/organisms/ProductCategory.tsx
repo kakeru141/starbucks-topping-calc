@@ -21,11 +21,11 @@ const ProductCategory: FC<P> = memo(
       <section>
         <Typography
           component='h2'
-          variant='h6'
+          variant='subtitle1'
+          fontWeight='bold'
           id={name}
           sx={{
-            fontWeight: 'bold',
-            mt: 4,
+            mt: 3,
             p: '8px 0',
             borderLeft: '8px solid #42a5f5',
             bgcolor: '#f5f5f5',
@@ -42,7 +42,8 @@ const ProductCategory: FC<P> = memo(
                       <ListItemText
                         primary={data.productName}
                         primaryTypographyProps={{
-                          variant: 'h6',
+                          variant: 'subtitle2',
+                          fontWeight: 'bold',
                         }}
                       />
                     </ListItemButton>

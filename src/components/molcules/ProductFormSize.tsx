@@ -345,6 +345,11 @@ const ProductFormSize: FC<P> = memo(
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-between',
+            '@media screen and (max-width: 600px)': {
+              flexDirection: 'column',
+              width: '100px',
+              m: 'auto'
+            }
           }}>
           {Object.entries(data.shop).map(([key, value], index) => {
             if (value.value) {
@@ -372,6 +377,11 @@ const ProductFormSize: FC<P> = memo(
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-between',
+            '@media screen and (max-width: 600px)': {
+              flexDirection: 'column',
+              width: '100px',
+              m: 'auto'
+            }
           }}>
           {Object.entries(data.takeout).map(([key, value], index) => {
             if (value.value) {

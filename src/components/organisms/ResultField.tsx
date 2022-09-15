@@ -98,10 +98,9 @@ const ResultField: FC<P> = memo(({ resultPrice, isShop, setIsShop, data }) => {
           onClick={openToggle}
           variant='outlined'
           sx={{
-            width: 20,
             m: '16px 16px 0 auto',
           }}>
-          <CloseIcon fontSize='large' />
+          <CloseIcon fontSize='medium' />
         </Button>
         <Detail
           data={data}

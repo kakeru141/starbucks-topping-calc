@@ -90,12 +90,12 @@ export const ProductItem: NextPage<P> = ({ data }) => {
             justifyContent: 'center',
           }}>
           <Typography
-            variant='h5'
+            variant='subtitle1'
             component='h1'
             sx={{
               fontWeight: 'bold',
               mt: 1,
-              p: '16px 24px',
+              p: '8px 24px',
               borderLeft: '8px solid #42a5f5',
               bgcolor: '#f5f5f5',
             }}>

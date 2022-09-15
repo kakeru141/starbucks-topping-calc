@@ -14,12 +14,12 @@ const Header: FC = () => {
         display: 'flex',
         justifyContent: 'space-between',
         mb: 2,
-        p: '16px',
+        p: '8px 16px',
       }}>
       {router.pathname === '/' ? (
         <>
           <Menu />
-          <Typography variant='h6' component='h1' m='auto'>
+          <Typography variant='subtitle1' component='h1' m='auto'>
             スタバのトッピング計算
           </Typography>
         </>

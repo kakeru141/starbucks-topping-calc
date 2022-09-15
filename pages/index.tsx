@@ -45,7 +45,8 @@ const Home: NextPage<P> = ({ datas }) => {
       <Container
         component='main'
         maxWidth='sm'
-        sx={{ m: 'auto', p: 2, textAlign: 'center' }}>
+        sx={{ m: 'auto', p: 2, textAlign: 'center' }}
+        >
         <Search setSearchDatas={setSearchDatas} beforeDatas={datas} />
         <ProductCategory
           searchDatas={searchDatas}

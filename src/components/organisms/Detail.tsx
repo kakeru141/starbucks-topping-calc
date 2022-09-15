@@ -1,4 +1,4 @@
-import { Box, FormControlLabel, Switch, Typography } from '@mui/material';
+import { Box, Container, FormControlLabel, Switch, Typography } from '@mui/material';
 import { ChangeEvent, FC, memo } from 'react';
 import { useRecoilValue } from 'recoil';
 import { totalPriceAtom } from '../../recoil/atom/totalPriceAtom';
@@ -16,7 +16,7 @@ const Detail: FC<P> = memo(({ data, isShop, changeIsShop, resultPrice }) => {
 
   if (isShop) {
     return (
-      <Box
+      <Container
         sx={{
           display: 'flex',
           flexDirection: 'column',
@@ -28,12 +28,12 @@ const Detail: FC<P> = memo(({ data, isShop, changeIsShop, resultPrice }) => {
           label='店内価格'
         />
         <Typography
-          variant='h5'
+          variant='h6'
           m='16px auto'
           fontWeight='bold'>{`合計${resultPrice}円`}</Typography>
-        <Typography variant='h6'>{`商品 - ${data.productName}`}</Typography>
+        <Typography variant='subtitle1'>{`商品 - ${data.productName}`}</Typography>
         <Typography
-          variant='h6'
+          variant='subtitle1'
           sx={{
             borderBottom: '1px solid #9e9e9e',
             pb: 2,
@@ -43,7 +43,7 @@ const Detail: FC<P> = memo(({ data, isShop, changeIsShop, resultPrice }) => {
           if (key !== 'size') {
             if (value) {
               return (
-                <Typography variant='h6' key={index}>
+                <Typography variant='subtitle1' key={index}>
                   {`${Object.values(totalData.name)[index]} - ${
                     Object.values(totalData.shop.price)[index]
                   }円`}
@@ -52,11 +52,11 @@ const Detail: FC<P> = memo(({ data, isShop, changeIsShop, resultPrice }) => {
             }
           }
         })}
-      </Box>
+      </Container>
     );
   } else {
     return (
-      <Box
+      <Container
         sx={{
           display: 'flex',
           flexDirection: 'column',
@@ -68,11 +68,12 @@ const Detail: FC<P> = memo(({ data, isShop, changeIsShop, resultPrice }) => {
           label='店内価格'
         />
         <Typography
-          variant='h5'
-          m='16px auto'>{`合計${resultPrice}円`}</Typography>
-        <Typography variant='h6'>{`商品 - ${data.productName}`}</Typography>
-        <Typography
           variant='h6'
+          m='16px auto'
+          fontWeight='bold'>{`合計${resultPrice}円`}</Typography>
+        <Typography variant='subtitle1'>{`商品 - ${data.productName}`}</Typography>
+        <Typography
+          variant='subtitle1'
           sx={{
             borderBottom: '1px solid #9e9e9e',
             pb: 2,
@@ -83,7 +84,7 @@ const Detail: FC<P> = memo(({ data, isShop, changeIsShop, resultPrice }) => {
             if (key !== 'size') {
               if (value) {
                 return (
-                  <Typography variant='h6' key={index}>
+                  <Typography variant='subtitle1' key={index}>
                     {`${Object.values(totalData.name)[index]} - ${
                       Object.values(totalData.takeout.price)[index]
                     }円`}
@@ -93,7 +94,7 @@ const Detail: FC<P> = memo(({ data, isShop, changeIsShop, resultPrice }) => {
             }
           }
         )}
-      </Box>
+      </Container>
     );
   }
 });
