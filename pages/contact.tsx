@@ -8,28 +8,29 @@ import HeadContainer from '../src/components/organisms/HeadContainer';
 import Header from '../src/components/organisms/Header';
 
 const Contact: NextPage = () => {
-
-  const [isSend, setIsSend] = useState(false)
+  const [isSend, setIsSend] = useState(false);
   const [values, setValues] = useState({
     name: '',
     email: '',
     msg: '',
-  })
+  });
 
-  const onChange = (e: ChangeEvent<HTMLInputElement>) => {{
-    setValues(prev => ({...prev, [e.target.name]: e.target.value}))
-  }} 
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    {
+      setValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    }
+  };
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    setIsSend(true)
-  }
+    setIsSend(true);
+  };
 
   return (
     <>
       <HeadContainer>
         <meta name='robots' content='noindex' />
       </HeadContainer>
-      <Header/>
-      <Container maxWidth='sm' >
+      <Header />
+      <Container maxWidth='sm'>
         {/* {isSend ?
         <ContactSended/>
         :

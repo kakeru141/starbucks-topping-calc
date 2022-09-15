@@ -54,15 +54,16 @@ const EditHome: NextPage<P> = ({ datas }) => {
           </Box>
           <Search setSearchDatas={setSearchDatas} beforeDatas={datas} />
           <List>
-            {searchDatas.map((data, index) => (
+            {searchDatas.map((data, index: number) => (
               <ListItem key={index}>
                 <ListItemText primary={data.productName} />
                 <Link href={`/control/edit/${data._id}`}>
-                <a>
-                  <Button variant='contained'>編集</Button>
-                </a>
-              </Link>  
+                  <a>
+                    <Button variant='contained'>編集</Button>
+                  </a>
+                </Link>
                 <Button
+                  sx={{ ml: 1 }}
                   onClick={() => {
                     deleteProduct(data._id);
                   }}

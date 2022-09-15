@@ -36,13 +36,13 @@ export default async function handler(
     }
   } else if (req.method === 'PUT') {
     try {
-        console.log('req body:', req.body)
-        const id = await req.body.id
-        const data = await req.body.data
-        await Product.findByIdAndUpdate(id, data)
-        res.end()
-    }catch (err) {
-        console.error(error)
+      console.log('req body:', req.body);
+      const id = await req.body.id;
+      const data = await req.body.data;
+      await Product.findByIdAndUpdate(id, data);
+      res.end();
+    } catch (err) {
+      console.error(error);
     }
   } else {
     console.log('メソッドが例外です');

@@ -3,9 +3,6 @@ import { atom } from 'recoil';
 export const addProductAtom = atom({
   key: 'addProductAtom',
   default: {
-    // _id: '',
-    // createdAt: 0,
-    // updatedAt: 0,
     productName: '',
     category: 'others',
     size: {
