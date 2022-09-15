@@ -1,5 +1,5 @@
-import { atom } from 'recoil'
-import { Product } from '../../types/productType'
+import { atom } from 'recoil';
+import { Product } from '../../types/productType';
 
 export const addProductAtom = atom({
   key: 'addProductAtom',
@@ -969,4 +969,4 @@ export const addProductAtom = atom({
       },
     },
   },
-})
+});

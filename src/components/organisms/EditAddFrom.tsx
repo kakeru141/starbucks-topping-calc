@@ -1,6 +1,6 @@
-import { ChangeEvent, FC, FormEvent } from 'react'
-import { useRecoilValue } from 'recoil'
-import { addProductAtom } from '../../recoil/atom/addProductAtom'
+import { ChangeEvent, FC, FormEvent, memo } from 'react';
+import { useRecoilValue } from 'recoil';
+import { addProductAtom } from '../../recoil/atom/addProductAtom';
 import {
   Box,
   Button,
@@ -17,21 +17,21 @@ import {
   TableRow,
   TextField,
   Typography,
-} from '@mui/material'
-import AddFormGroup from '../molcules/AddFormGroup'
-import AddFormSolo from '../molcules/AddFormSolo'
+} from '@mui/material';
+import AddFormGroup from '../molcules/AddFormGroup';
+import AddFormSolo from '../molcules/AddFormSolo';
 
 type P = {
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void
-  backPage: () => void
-  onSubmit: (e: FormEvent<HTMLFormElement>) => void
-}
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  backPage: () => void;
+  onSubmit: (e: FormEvent<HTMLFormElement>) => void;
+};
 
-const EditAddFrom: FC<P> = ({ onChange, backPage, onSubmit }) => {
-  const addProduct = useRecoilValue(addProductAtom)
+const EditAddFrom: FC<P> = memo(({ onChange, backPage, onSubmit }) => {
+  const addProduct = useRecoilValue(addProductAtom);
   return (
-    <Container component="main" maxWidth="md" sx={{ p: 3 }}>
-      <Typography variant="h5" sx={{ m: 'auto', textAlign: 'center' }}>
+    <Container component='main' maxWidth='md' sx={{ p: 3 }}>
+      <Typography variant='h5' sx={{ m: 'auto', textAlign: 'center' }}>
         商品の追加
       </Typography>
       <TableContainer>
@@ -40,54 +40,54 @@ const EditAddFrom: FC<P> = ({ onChange, backPage, onSubmit }) => {
             <TableBody>
               <TableRow>
                 <TableCell>
-                  <Typography variant="h5">name</Typography>
+                  <Typography variant='h5'>name</Typography>
                 </TableCell>
                 <TableCell>
                   <TextField
-                    label="商品名"
+                    label='商品名'
                     required
                     fullWidth
-                    name="productName"
+                    name='productName'
                     onChange={onChange}
                   />
                 </TableCell>
               </TableRow>
               <TableRow>
                 <TableCell>
-                  <Typography variant="h5">category</Typography>
+                  <Typography variant='h5'>category</Typography>
                 </TableCell>
                 <TableCell>
                   <RadioGroup onChange={onChange}>
                     <FormControlLabel
-                      control={<Radio/>}
+                      control={<Radio />}
                       name='category'
                       value='coffe'
                       label='コーヒー'
                       checked={addProduct.category === 'coffe'}
                     />
                     <FormControlLabel
-                      control={<Radio/>}
+                      control={<Radio />}
                       name='category'
                       value='espresso'
                       label='エスプレッソ'
                       checked={addProduct.category === 'espresso'}
                     />
                     <FormControlLabel
-                      control={<Radio/>}
+                      control={<Radio />}
                       name='category'
                       value='frappucino'
                       label='フラペチーノ'
                       checked={addProduct.category === 'frappucino'}
                     />
                     <FormControlLabel
-                      control={<Radio/>}
+                      control={<Radio />}
                       name='category'
                       value='tea'
                       label='ティー'
                       checked={addProduct.category === 'tea'}
                     />
                     <FormControlLabel
-                      control={<Radio/>}
+                      control={<Radio />}
                       name='category'
                       value='others'
                       label='その他'
@@ -98,17 +98,17 @@ const EditAddFrom: FC<P> = ({ onChange, backPage, onSubmit }) => {
               </TableRow>
               <TableRow>
                 <TableCell>
-                  <Typography variant="h5">price</Typography>
+                  <Typography variant='h5'>price</Typography>
                 </TableCell>
                 <TableCell>
                   <List>
-                  <Typography m={2}>店内価格</Typography>
+                    <Typography m={2}>店内価格</Typography>
                     {Object.entries(addProduct.size.shop).map(
                       ([key, value], index) => {
                         return (
                           <ListItem key={index}>
                             <TextField
-                              type="number"
+                              type='number'
                               label={key}
                               name='size'
                               id={key}
@@ -116,15 +116,15 @@ const EditAddFrom: FC<P> = ({ onChange, backPage, onSubmit }) => {
                               value={value.value}
                             />
                           </ListItem>
-                        )
-                      },
+                        );
+                      }
                     )}
                   </List>
                 </TableCell>
               </TableRow>
               <TableRow>
                 <TableCell>
-                  <Typography variant="h5">topping</Typography>
+                  <Typography variant='h5'>topping</Typography>
                 </TableCell>
                 <TableCell>
                   <AddFormSolo
@@ -179,7 +179,7 @@ const EditAddFrom: FC<P> = ({ onChange, backPage, onSubmit }) => {
                     datas={addProduct.topping.chocoSaucePlus}
                     onChange={onChange}
                   />
-                  
+
                   <AddFormSolo
                     datas={addProduct.topping.caramelSaucePlus}
                     onChange={onChange}
@@ -298,24 +298,22 @@ const EditAddFrom: FC<P> = ({ onChange, backPage, onSubmit }) => {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-            }}
-          >
+            }}>
             <Button
-              type="button"
+              type='button'
               sx={{ m: '8px 0' }}
-              variant="outlined"
-              onClick={backPage}
-            >
+              variant='outlined'
+              onClick={backPage}>
               戻る
             </Button>
-            <Button type="submit" sx={{ m: '8px 0' }} variant="contained">
+            <Button type='submit' sx={{ m: '8px 0' }} variant='contained'>
               追加
             </Button>
           </Box>
         </form>
       </TableContainer>
     </Container>
-  )
-}
+  );
+});
 
-export default EditAddFrom
+export default EditAddFrom;

@@ -1,4 +1,4 @@
-import { atom } from 'recoil'
+import { atom } from 'recoil';
 
 export const totalPriceAtom = atom({
   key: 'totalPriceAtom',
@@ -17,7 +17,7 @@ export const totalPriceAtom = atom({
       caramelSaucePlus: 'キャラメルソース追加',
       vanillaPlus: 'バニラシロップ追加',
       caramelPlus: 'キャラメルシロップ追加',
-      classicPlus:'クラッシックシロップ追加',
+      classicPlus: 'クラッシックシロップ追加',
       mochaPlus: 'モカシロップ追加',
       whiteMochaPlus: 'ホワイトモカシロップ追加',
       chaiPlus: 'チャイシロップ追加',
@@ -75,7 +75,7 @@ export const totalPriceAtom = atom({
         iceGroup: 0,
         hotGroup: 0,
         honeyPlus: 0,
-        cocoa:0,
+        cocoa: 0,
         cinnamon: 0,
         teaLeaf: 0,
         whipPlus: 0,
@@ -192,7 +192,7 @@ export const totalPriceAtom = atom({
         caramelSaucePlus: false,
         vanillaPlus: false,
         caramelPlus: false,
-        classicPlus:false,
+        classicPlus: false,
         mochaPlus: false,
         whiteMochaPlus: false,
         chaiPlus: false,
@@ -223,4 +223,4 @@ export const totalPriceAtom = atom({
       },
     },
   },
-})
+});

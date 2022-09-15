@@ -1,56 +1,54 @@
-import { useRouter } from 'next/router'
-import { ChangeEvent, FC, FormEvent } from 'react'
-import { SetterOrUpdater } from 'recoil'
-import { EditProduct, } from '../../types/productType'
-import EditAddFrom from '../organisms/EditAddFrom'
+import { useRouter } from 'next/router';
+import { ChangeEvent, FC, FormEvent, memo } from 'react';
+import { SetterOrUpdater } from 'recoil';
+import { EditProduct } from '../../types/productType';
+import EditAddFrom from '../organisms/EditAddFrom';
 
 type P = {
-  onSubmit: (e: FormEvent<HTMLFormElement>) => void
-  setProductData: SetterOrUpdater<EditProduct>
-}
+  onSubmit: (e: FormEvent<HTMLFormElement>) => void;
+  setProductData: SetterOrUpdater<EditProduct>;
+};
 
-const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
-  const router = useRouter()
+const EditAddFromFunctions: FC<P> = memo(({ onSubmit, setProductData }) => {
+  const router = useRouter();
 
   const backPage = () => {
-    router.push('/control')
-  }
+    router.push('/control');
+  };
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     //name
     if (e.target.name === 'productName') {
       setProductData((prev) => {
-        return { ...prev, productName: e.target.value }
-      })
+        return { ...prev, productName: e.target.value };
+      });
 
-    //category
-    } else if (e.target.name === 'category') {        
-      setProductData(prev => (
-        {...prev, category: e.target.value}
-      ))
+      //category
+    } else if (e.target.name === 'category') {
+      setProductData((prev) => ({ ...prev, category: e.target.value }));
       //size
-      } else if (e.target.name === 'size') {        
-        setProductData((prev) => {
-          return {
-            ...prev,
-            size: {
-              ...prev.size,
-              shop: {
-                ...prev.size.shop,
-                [e.target.id]: {
-                  ...prev.size.shop.grande,
-                  value: e.target.valueAsNumber,
-                },
-              },
-              takeout: {
-                ...prev.size.takeout,
-                [e.target.id]: {
-                  ...prev.size.takeout.grande,
-                  value: Math.round((e.target.valueAsNumber / 1.1) * 1.08)
-                },
+    } else if (e.target.name === 'size') {
+      setProductData((prev) => {
+        return {
+          ...prev,
+          size: {
+            ...prev.size,
+            shop: {
+              ...prev.size.shop,
+              [e.target.id]: {
+                ...prev.size.shop.grande,
+                value: e.target.valueAsNumber,
               },
             },
-          }
-        })
+            takeout: {
+              ...prev.size.takeout,
+              [e.target.id]: {
+                ...prev.size.takeout.grande,
+                value: Math.round((e.target.valueAsNumber / 1.1) * 1.08),
+              },
+            },
+          },
+        };
+      });
       //topping
     } else if (e.target.name === 'whipGroup') {
       setProductData((prev) => {
@@ -66,8 +64,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               },
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'rawChocolateWhip') {
       setProductData((prev) => {
         return {
@@ -79,8 +77,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'coffeeCream') {
       setProductData((prev) => {
         return {
@@ -92,8 +90,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'milkGroup') {
       setProductData((prev) => {
         return {
@@ -108,8 +106,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               },
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'changeMilkGroup') {
       setProductData((prev) => {
         return {
@@ -124,8 +122,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               },
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'allMilk') {
       setProductData((prev) => {
         return {
@@ -137,8 +135,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'powderGroup') {
       setProductData((prev) => {
         return {
@@ -153,8 +151,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               },
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'sauceGroup') {
       setProductData((prev) => {
         return {
@@ -169,8 +167,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               },
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'chocoSaucePlus') {
       setProductData((prev) => {
         return {
@@ -182,8 +180,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'caramelSaucePlus') {
       setProductData((prev) => {
         return {
@@ -195,8 +193,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'syrupGroup') {
       setProductData((prev) => {
         return {
@@ -211,8 +209,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               },
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'changeSyrupGroup') {
       setProductData((prev) => {
         return {
@@ -227,8 +225,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               },
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'chipGroup') {
       setProductData((prev) => {
         return {
@@ -243,8 +241,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               },
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'wristletShot') {
       setProductData((prev) => {
         return {
@@ -256,8 +254,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'changeEspresso') {
       setProductData((prev) => {
         return {
@@ -269,8 +267,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'iceGroup') {
       setProductData((prev) => {
         return {
@@ -285,8 +283,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               },
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'hotGroup') {
       setProductData((prev) => {
         return {
@@ -301,8 +299,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               },
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'cocoa') {
       setProductData((prev) => {
         return {
@@ -314,8 +312,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'cinnamon') {
       setProductData((prev) => {
         return {
@@ -327,8 +325,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'honeyPlus') {
       setProductData((prev) => {
         return {
@@ -340,8 +338,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'teaLeafChange') {
       setProductData((prev) => {
         return {
@@ -353,8 +351,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'vanillaPlus') {
       setProductData((prev) => {
         return {
@@ -366,8 +364,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'caramelPlus') {
       setProductData((prev) => {
         return {
@@ -379,8 +377,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'classicPlus') {
       setProductData((prev) => {
         return {
@@ -392,8 +390,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'mochaPlus') {
       setProductData((prev) => {
         return {
@@ -405,8 +403,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'whiteMochaPlus') {
       setProductData((prev) => {
         return {
@@ -418,8 +416,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'chaiPlus') {
       setProductData((prev) => {
         return {
@@ -431,8 +429,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'valenciaPlus') {
       setProductData((prev) => {
         return {
@@ -444,8 +442,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'gingerPlus') {
       setProductData((prev) => {
         return {
@@ -457,8 +455,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'whipPlus') {
       setProductData((prev) => {
         return {
@@ -470,8 +468,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'steamMilkPlus') {
       setProductData((prev) => {
         return {
@@ -483,8 +481,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'foamMilkPlus') {
       setProductData((prev) => {
         return {
@@ -496,8 +494,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'shotPlusGroup') {
       setProductData((prev) => {
         return {
@@ -512,8 +510,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               },
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'coffeeRoastPlusGroup') {
       setProductData((prev) => {
         return {
@@ -528,8 +526,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               },
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'chocolateChipPlus') {
       setProductData((prev) => {
         return {
@@ -541,8 +539,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'decaf') {
       //コーヒーローストとデカフェの併用不可
       setProductData((prev) => {
@@ -555,8 +553,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'mousseFoam') {
       setProductData((prev) => {
         return {
@@ -568,8 +566,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'citrusPulpPlusGroup') {
       setProductData((prev) => {
         return {
@@ -584,8 +582,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               },
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'teaLeafAddGroup') {
       setProductData((prev) => {
         return {
@@ -600,8 +598,8 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               },
             },
           },
-        }
-      })
+        };
+      });
     } else if (e.target.name === 'teaLeafPlus') {
       setProductData((prev) => {
         return {
@@ -613,16 +611,16 @@ const EditAddFromFunctions: FC<P> = ({ onSubmit, setProductData }) => {
               exist: e.target.value === 'true',
             },
           },
-        }
-      })
+        };
+      });
     } else {
-      console.log('例外')
+      console.log('例外');
     }
-  }
+  };
 
   return (
     <EditAddFrom onChange={onChange} backPage={backPage} onSubmit={onSubmit} />
-  )
-}
+  );
+});
 
-export default EditAddFromFunctions
+export default EditAddFromFunctions;
