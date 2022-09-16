@@ -19,10 +19,6 @@ const Auth: FC<P> = memo(({ children }) => {
     });
   };
 
-  //error
-  const [isError, setIsError] = useState(false);
-
-  //login
   const [isLogin, setIsLogin] = useRecoilState(LoginAtom);
 
   const signIn = (e: FormEvent<HTMLFormElement>) => {
@@ -32,12 +28,9 @@ const Auth: FC<P> = memo(({ children }) => {
       values.password === process.env.NEXT_PUBLIC_PASSWORD
     ) {
       setIsLogin(true);
-    } else {
-      setIsError(true);
     }
   };
 
-  //render
 
   if (isLogin) {
     return <>{children}</>;

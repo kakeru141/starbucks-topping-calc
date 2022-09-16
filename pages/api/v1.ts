@@ -20,6 +20,7 @@ export default async function handler(
       console.error(err);
     }
   } else if (req.method === 'POST') {
+    console.log('POST');
     try {
       const createProduct = await Product.create(req.body);
       res.status(200).json(createProduct);
