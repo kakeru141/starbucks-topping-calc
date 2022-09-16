@@ -31,7 +31,6 @@ const Auth: FC<P> = memo(({ children }) => {
     }
   };
 
-
   if (isLogin) {
     return <>{children}</>;
   } else {

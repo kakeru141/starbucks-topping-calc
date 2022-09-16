@@ -4,9 +4,9 @@ import { useState } from 'react';
 import Auth from '../../src/components/templates/Auth';
 import { Product } from '../../src/types/productType';
 import {
+  Container,
   Box,
   Button,
-  Container,
   List,
   ListItem,
   ListItemText,
@@ -41,7 +41,7 @@ const EditHome: NextPage<P> = ({ datas }) => {
       <Auth>
         <Container maxWidth='md'>
           <Box sx={{ display: 'flex', justifyContent: 'space-around', m: 4 }}>
-            <Link href={'/control/add'}>
+            <Link href={'/control/Add'}>
               <a>
                 <Button variant='contained'>新規追加</Button>
               </a>

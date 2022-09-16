@@ -27,7 +27,6 @@ const EditAddFromFunctions: FC<P> = memo(({ onSubmit, setProductData }) => {
       setProductData((prev) => ({ ...prev, category: e.target.value }));
       //size
     } else if (e.target.name === 'size') {
-      console.log(e.target.valueAsNumber);
       setProductData((prev) => {
         return {
           ...prev,

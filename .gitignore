@@ -35,3 +35,7 @@ yarn-error.log*
 *.tsbuildinfo
 
 .prettierrc.json
+
+.babelrc.js
+
+config-overrides.js
