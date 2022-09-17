@@ -30,6 +30,7 @@ const Search: FC<P> = memo(
     return (
       <>
         <TextField
+          label='商品を探す'
           size='small'
           InputProps={{
             startAdornment: (

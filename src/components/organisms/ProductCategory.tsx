@@ -37,11 +37,12 @@ const ProductCategory: FC<P> = memo(
             if (data.category === name) {
               return (
                 <Link href={`/products/${data._id}`} key={data._id}>
-                  <ListItem component='a'>
-                    <ListItemButton>
+                  <ListItem>
+                    <ListItemButton component='a'>
                       <ListItemText
                         primary={data.productName}
                         primaryTypographyProps={{
+                          component: 'p',
                           variant: 'subtitle2',
                           fontWeight: 'bold',
                         }}

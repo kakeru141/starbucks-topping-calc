@@ -22,7 +22,7 @@ const Menu: FC = memo(() => {
   };
   return (
     <>
-      <IconButton onClick={openToggle}>
+      <IconButton onClick={openToggle} >
         <MenuIcon fontSize='medium' />
       </IconButton>
       <Drawer anchor='left' open={open} onClose={openToggle}>
