@@ -5,10 +5,14 @@ const nextConfig = {
   staticPageGenerationTimeout: 120,
 };
 
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-});
+// const  withPlugins  =  require ( 'next-compose-plugins' ) 
+// const  withBundleAnalyzer  =  require ( '@next/bundle-analyzer' ) ( { 
+//   enabled : process.env.ANALYZE  ===  'true' , 
+// } ) 
 
-module.exports = withBundleAnalyzer({});
+// module . exports  =  withPlugins ( [ 
+//   [ withBundleAnalyzer ] , 
+//   // ここに他のプラグイン
+// ] )
 
 module.exports = nextConfig;

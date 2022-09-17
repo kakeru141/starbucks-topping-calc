@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { FormEvent, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
@@ -51,33 +51,13 @@ const EditPage: NextPage<P> = ({ data }) => {
 };
 
 export default EditPage;
-export async function getStaticPaths() {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`);
-    const datas = (await res.json()) as Product[];
-    const paths = await datas.map((data: Product) => ({
-      params: {
-        id: data._id,
-      },
-    }));
-    return {
-      paths,
-      fallback: false,
-    };
-  } catch (err) {
-    console.log(err);
-    return {
-      paths: [],
-      fallback: false,
-    };
-  }
-}
 
-export async function getStaticProps({ params }: { params: { id: string } }) {
+export const getServerSideProps: GetServerSideProps = async ({params}) => {
   try {
+    const id = params?.id
     const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`);
     const datas = (await res.json()) as Product[];
-    const data = await datas.find((item) => item._id === params.id);
+    const data = await datas.find((item) => item._id === id)
     return {
       props: {
         data,
@@ -85,6 +65,8 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
     };
   } catch (err) {
     console.log(err);
-    return {};
+    return {
+      props: {}
+    };
   }
 }
