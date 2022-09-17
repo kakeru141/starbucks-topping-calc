@@ -42,7 +42,7 @@ const EditHome: NextPage<P> = ({ datas }) => {
       <Auth>
         <Container maxWidth='md'>
           <Box sx={{ display: 'flex', justifyContent: 'space-around', m: 4 }}>
-            <Link href={'/control/Add'}>
+            <Link href={'/control/add'}>
               <a>
                 <Button variant='contained'>新規追加</Button>
               </a>
@@ -87,7 +87,7 @@ const EditHome: NextPage<P> = ({ datas }) => {
 
 export default EditHome;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`);
     const datas = await res.json();
