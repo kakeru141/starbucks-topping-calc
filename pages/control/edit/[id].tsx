@@ -8,6 +8,7 @@ import HeadContainer from '../../../src/components/organisms/HeadContainer';
 import Auth from '../../../src/components/templates/Auth';
 import { addProductAtom } from '../../../src/recoil/atom/addProductAtom';
 import { Product } from '../../../src/types/productType';
+import fetch from 'node-fetch';
 
 type P = {
   data: Product;

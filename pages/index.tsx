@@ -6,6 +6,7 @@ import Header from '../src/components/organisms/Header';
 import Search from '../src/components/molcules/Search';
 import HeadContainer from '../src/components/organisms/HeadContainer';
 import ProductCategory from '../src/components/organisms/ProductCategory';
+import fetch from 'node-fetch';
 
 type P = {
   datas: Product[];

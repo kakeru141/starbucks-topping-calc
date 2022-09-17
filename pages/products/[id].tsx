@@ -11,6 +11,7 @@ import Header from '../../src/components/organisms/Header';
 import ResultField from '../../src/components/organisms/ResultField';
 import { totalPriceAtom } from '../../src/recoil/atom/totalPriceAtom';
 import { Product } from '../../src/types/productType';
+import fetch from 'node-fetch';
 
 type P = {
   data: Product;

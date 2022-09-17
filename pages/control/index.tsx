@@ -15,6 +15,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import Search from '../../src/components/molcules/Search';
 import HeadContainer from '../../src/components/organisms/HeadContainer';
+import fetch from 'node-fetch';
 
 type P = {
   datas: Product[];
