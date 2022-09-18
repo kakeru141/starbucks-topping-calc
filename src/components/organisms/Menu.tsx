@@ -12,68 +12,83 @@ import {
 } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 
 const Menu: FC = memo(() => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
-  const openToggle = () => {
-    setOpen((prev) => !prev);
+  const onOpen = () => {
+    setOpen(true);
   };
+  const onClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
-      <IconButton onClick={openToggle}>
+      <IconButton onClick={onOpen}>
         <MenuIcon fontSize='medium' />
       </IconButton>
-      <Drawer anchor='left' open={open} onClose={openToggle}>
+      <Drawer anchor='left' open={open} onClose={onClose}>
         <Box p='16px' component='nav'>
           <IconButton
-            onClick={openToggle}
+            onClick={onClose}
             sx={{ display: 'flex', m: 'auto 0 auto auto' }}>
             <ArrowBackIosNewIcon fontSize='medium' />
           </IconButton>
           <List disablePadding>
             <ListItem>
-              <Link href='/'>
-                <ListItemButton component='a'>
-                  <ListItemText primary='トップ' />
-                </ListItemButton>
-              </Link>
+              <ListItemButton
+                onClick={() => {
+                  onClose();
+                  router.push('/');
+                }}>
+                <ListItemText primary='トップ' />
+              </ListItemButton>
             </ListItem>
             <ListItem>
-              <Link href='/#coffe'>
-                <ListItemButton component='a'>
-                  <ListItemText primary='コーヒー' />
-                </ListItemButton>
-              </Link>
+              <ListItemButton
+                onClick={() => {
+                  onClose();
+                  router.push('/#coffe');
+                }}>
+                <ListItemText primary='コーヒー' />
+              </ListItemButton>
             </ListItem>
             <ListItem>
-              <Link href='/#espresso'>
-                <ListItemButton component='a'>
-                  <ListItemText primary='エスプレッソ' />
-                </ListItemButton>
-              </Link>
+              <ListItemButton
+                onClick={() => {
+                  onClose();
+                  router.push('/#espresso');
+                }}>
+                <ListItemText primary='エスプレッソ' />
+              </ListItemButton>
             </ListItem>
             <ListItem>
-              <Link href='/#frappucino'>
-                <ListItemButton component='a'>
-                  <ListItemText primary='フラペチーノ' />
-                </ListItemButton>
-              </Link>
+              <ListItemButton
+                onClick={() => {
+                  onClose();
+                  router.push('/#frappuccino');
+                }}>
+                <ListItemText primary='フラペチーノ' />
+              </ListItemButton>
             </ListItem>
             <ListItem>
-              <Link href='/#tea'>
-                <ListItemButton component='a'>
-                  <ListItemText primary='ティー' />
-                </ListItemButton>
-              </Link>
+              <ListItemButton
+                onClick={() => {
+                  onClose();
+                  router.push('/#tea');
+                }}>
+                <ListItemText primary='ティー' />
+              </ListItemButton>
             </ListItem>
             <ListItem>
-              <Link href='/#others'>
-                <ListItemButton component='a'>
-                  <ListItemText primary='その他' />
-                </ListItemButton>
-              </Link>
+              <ListItemButton
+                onClick={() => {
+                  onClose();
+                  router.push('/#others');
+                }}>
+                <ListItemText primary='その他' />
+              </ListItemButton>
             </ListItem>
           </List>
           <Button
