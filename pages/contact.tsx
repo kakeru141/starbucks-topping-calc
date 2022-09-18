@@ -1,4 +1,5 @@
 import { Container } from '@mui/material';
+import axios from 'axios';
 import { NextPage } from 'next';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import ContactMsg from '../src/components/molcules/ContactMsg';
@@ -21,6 +22,11 @@ const Contact: NextPage = () => {
     }
   };
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    axios.post('/api/contact', {
+      name: values.name,
+      email: values.email,
+      msg: values.msg
+    })
     setIsSend(true);
   };
 
@@ -31,14 +37,14 @@ const Contact: NextPage = () => {
       </HeadContainer>
       <Header />
       <Container maxWidth='sm'>
-        {/* {isSend ?
+        {isSend ?
         <ContactSended/>
         :
         <>
         <ContactMsg/>
         <ContactForm onChange={onChange} onSubmit={onSubmit} />
         </>
-      } */}
+      }
       </Container>
     </>
   );
