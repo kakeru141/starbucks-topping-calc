@@ -18,7 +18,6 @@ type P = {
 };
 
 export const ProductItem: NextPage<P> = ({ data }) => {
-  console.log(data);
   const router = useRouter();
   const totalPrice = useRecoilValue(totalPriceAtom);
   const [fetchData, setFetchData] = useState(data);
@@ -171,178 +170,90 @@ export const ProductItem: NextPage<P> = ({ data }) => {
           <ProductFormSolo
             data={fetchData.topping.rawChocolateWhip}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.coffeeCream}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.allMilk}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.wristletShot}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.changeEspresso}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.honeyPlus}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.chocoSaucePlus}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.caramelSaucePlus}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.cocoa}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.cinnamon}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.vanillaPlus}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.caramelPlus}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.classicPlus}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.mochaPlus}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.whiteMochaPlus}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.chaiPlus}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.valenciaPlus}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.gingerPlus}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.whipPlus}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.steamMilkPlus}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.foamMilkPlus}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.chocolateChipPlus}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.decaf}
@@ -355,110 +266,85 @@ export const ProductItem: NextPage<P> = ({ data }) => {
           <ProductFormSolo
             data={fetchData.topping.mousseFoam}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.teaLeafChange}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormSolo
             data={fetchData.topping.teaLeafPlus}
             setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
           />
           <ProductFormGroup
             data={fetchData.topping.whipGroup}
             setData={setFetchData}
             isShop={isShop}
-            isDecaf={fetchData.topping.decaf.select}
           />
           <ProductFormGroup
             data={fetchData.topping.milkGroup}
             setData={setFetchData}
             isShop={isShop}
-            isDecaf={fetchData.topping.decaf.select}
           />
           <ProductFormGroup
             data={fetchData.topping.changeMilkGroup}
             setData={setFetchData}
             isShop={isShop}
-            isDecaf={fetchData.topping.decaf.select}
           />
           <ProductFormGroup
             data={fetchData.topping.powderGroup}
             setData={setFetchData}
             isShop={isShop}
-            isDecaf={fetchData.topping.decaf.select}
           />
           <ProductFormGroup
             data={fetchData.topping.sauceGroup}
             setData={setFetchData}
             isShop={isShop}
-            isDecaf={fetchData.topping.decaf.select}
           />
           <ProductFormGroup
             data={fetchData.topping.syrupGroup}
             setData={setFetchData}
             isShop={isShop}
-            isDecaf={fetchData.topping.decaf.select}
           />
           <ProductFormGroup
             data={fetchData.topping.changeSyrupGroup}
             setData={setFetchData}
             isShop={isShop}
-            isDecaf={fetchData.topping.decaf.select}
           />
           <ProductFormGroup
             data={fetchData.topping.chipGroup}
             setData={setFetchData}
             isShop={isShop}
-            isDecaf={fetchData.topping.decaf.select}
           />
           <ProductFormGroup
             data={fetchData.topping.iceGroup}
             setData={setFetchData}
             isShop={isShop}
-            isDecaf={fetchData.topping.decaf.select}
           />
           <ProductFormGroup
             data={fetchData.topping.hotGroup}
             setData={setFetchData}
             isShop={isShop}
-            isDecaf={fetchData.topping.decaf.select}
           />
           <ProductFormGroup
             data={fetchData.topping.shotPlusGroup}
             setData={setFetchData}
             isShop={isShop}
-            isDecaf={fetchData.topping.decaf.select}
           />
           <ProductFormGroup
             data={fetchData.topping.coffeeRoastPlusGroup}
             setData={setFetchData}
             isShop={isShop}
-            isDecaf={fetchData.topping.decaf.select}
+            isDecaf={!fetchData.topping.decaf.select}
           />
           <ProductFormGroup
             data={fetchData.topping.citrusPulpPlusGroup}
             setData={setFetchData}
             isShop={isShop}
-            isDecaf={fetchData.topping.decaf.select}
           />
           <ProductFormGroup
             data={fetchData.topping.teaLeafAddGroup}
             setData={setFetchData}
             isShop={isShop}
-            isDecaf={fetchData.topping.decaf.select}
           />
         </form>
       </Container>
