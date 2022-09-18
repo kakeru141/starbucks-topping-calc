@@ -8,7 +8,7 @@ const ContactSended: FC = () => {
     <>
       <Typography variant='body1'>
         お問い合わせありがとうございます。
-        <br/>
+        <br />
         回答を受け付けました。
       </Typography>
       <Button

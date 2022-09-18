@@ -22,11 +22,12 @@ const Contact: NextPage = () => {
     }
   };
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    axios.post('/api/contact', {
+    await e.preventDefault();
+    await axios.post('/api/contact', {
       name: values.name,
       email: values.email,
-      msg: values.msg
-    })
+      msg: values.msg,
+    });
     setIsSend(true);
   };
 
@@ -37,14 +38,14 @@ const Contact: NextPage = () => {
       </HeadContainer>
       <Header />
       <Container maxWidth='sm'>
-        {isSend ?
-        <ContactSended/>
-        :
-        <>
-        <ContactMsg/>
-        <ContactForm onChange={onChange} onSubmit={onSubmit} />
-        </>
-      }
+        {isSend ? (
+          <ContactSended />
+        ) : (
+          <>
+            <ContactMsg />
+            <ContactForm onChange={onChange} onSubmit={onSubmit} />
+          </>
+        )}
       </Container>
     </>
   );

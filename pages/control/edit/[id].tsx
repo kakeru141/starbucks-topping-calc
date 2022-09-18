@@ -52,12 +52,12 @@ const EditPage: NextPage<P> = ({ data }) => {
 
 export default EditPage;
 
-export const getServerSideProps: GetServerSideProps = async ({params}) => {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   try {
-    const id = params?.id
+    const id = params?.id;
     const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`);
     const datas = (await res.json()) as Product[];
-    const data = await datas.find((item) => item._id === id)
+    const data = await datas.find((item) => item._id === id);
     return {
       props: {
         data,
@@ -66,7 +66,7 @@ export const getServerSideProps: GetServerSideProps = async ({params}) => {
   } catch (err) {
     console.log(err);
     return {
-      props: {}
+      props: {},
     };
   }
-}
+};
