@@ -2,7 +2,7 @@ import axios from 'axios';
 import { GetServerSideProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { FormEvent, useEffect } from 'react';
-import { useRecoilState } from 'recoil';
+import { RecoilRoot, useRecoilState } from 'recoil';
 import HeadContainer from '../../../src/components/organisms/HeadContainer';
 import Auth from '../../../src/components/templates/Auth';
 import { addProductAtom } from '../../../src/recoil/atom/addProductAtom';
@@ -39,7 +39,7 @@ const EditPage: NextPage<P> = ({ data }) => {
   }, [data, setEditProduct]);
 
   return (
-    <>
+    <RecoilRoot>
       <HeadContainer>
         <meta name='robots' content='noindex' />
       </HeadContainer>
@@ -49,7 +49,7 @@ const EditPage: NextPage<P> = ({ data }) => {
           setProductData={setEditProduct}
         />
       </Auth>
-    </>
+    </RecoilRoot>
   );
 };
 

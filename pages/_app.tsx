@@ -1,6 +1,5 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import { RecoilRoot } from 'recoil';
 import {
   Box,
   CircularProgress,
@@ -41,12 +40,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     );
   } else {
     return (
-      <RecoilRoot>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </RecoilRoot>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Component {...pageProps} />
+      </ThemeProvider>
     );
   }
 }

@@ -2,7 +2,7 @@ import { Box, Button, Container, Typography } from '@mui/material';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { useRecoilValue } from 'recoil';
+import { RecoilRoot, useRecoilValue } from 'recoil';
 import ProductFormGroup from '../../src/components/molcules/ProductFormGroup';
 import ProductFormSize from '../../src/components/molcules/ProductFormSize';
 import ProductFormSolo from '../../src/components/molcules/ProductFormSolo';
@@ -24,28 +24,27 @@ export const ProductItem: NextPage<P> = ({ data }) => {
   const [resultPrice, setResultPrice] = useState(0);
   const [isShop, setIsShop] = useState(true);
 
-  const calclation = () => {
-    if (isShop) {
-      setResultPrice(
-        Object.values(totalPrice.shop.price).reduce(
-          (prev, current) => prev + current
-        )
-      );
-    } else {
-      setResultPrice(
-        Object.values(totalPrice.takeout.price).reduce(
-          (prev, current) => prev + current
-        )
-      );
-    }
-  };
   useEffect(() => {
+    const calclation = () => {
+      if (isShop) {
+        setResultPrice(
+          Object.values(totalPrice.shop.price).reduce(
+            (prev, current) => prev + current
+          )
+        );
+      } else {
+        setResultPrice(
+          Object.values(totalPrice.takeout.price).reduce(
+            (prev, current) => prev + current
+          )
+        );
+      }
+    };
     calclation();
-  }, [totalPrice, isShop]);
-  // }, [totalPrice, isShop, resultPrice]);
+  }, [totalPrice, isShop, resultPrice]);
 
   return (
-    <>
+    <RecoilRoot>
       <HeadContainer>
         <meta
           name='description'
@@ -363,7 +362,7 @@ export const ProductItem: NextPage<P> = ({ data }) => {
         setIsShop={setIsShop}
         data={data}
       />
-    </>
+    </RecoilRoot>
   );
 };
 
