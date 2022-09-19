@@ -2,6 +2,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import createEmotionCache from '../src/createEmotionCache';
 import { createTheme } from '@mui/material';
+import { GA_ID } from '../src/libs/gtag';
 
 const theme = createTheme();
 export default class MyDocument extends Document {
@@ -9,6 +10,26 @@ export default class MyDocument extends Document {
     return (
       <Html lang='ja'>
         <Head>
+          {/* Google Analytics */}
+          {GA_ID && (
+            <>
+              <script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              />
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+                   window.dataLayer = window.dataLayer || [];
+                   function gtag(){dataLayer.push(arguments);}
+                   gtag('js', new Date());
+                   gtag('config', '${GA_ID}', {
+                     page_path: window.location.pathname,
+                   });`,
+                }}
+              />
+            </>
+          )}
           <meta name='theme-color' content={theme.palette.primary.main} />
           <link
             rel='stylesheet'

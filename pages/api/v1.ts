@@ -1,7 +1,7 @@
 import { error } from 'console';
 import mongoose from 'mongoose';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { Product } from '../../DB/model';
+import { Product } from '../../src/libs/DB/model';
 
 mongoose
   .connect(process.env.DB_URL || '')

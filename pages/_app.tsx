@@ -10,8 +10,10 @@ import {
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { RecoilRoot } from 'recoil';
+import { usePageView } from '../src/hooks/usePageView';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  usePageView();
   const router = useRouter();
   const theme = createTheme();
 
