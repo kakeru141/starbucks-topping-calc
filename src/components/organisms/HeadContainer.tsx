@@ -8,23 +8,23 @@ type P = {
 const HeadContainer: FC<P> = ({ children }) => {
   return (
     <Head>
-      {/* <title>スタバのトッピング計算</title>
+      <title>スタバのトッピング計算</title>
       <meta charSet='utf-8' />
       <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       <meta name='format-detection' content='telephone=no' />
-      <link
+      {/* <link
         rel='apple-touch-icon'
         sizes='180x180'
         href='/favicons/apple-touch-icon.png'
-      />
+      /> */}
       <link
         rel='icon'
         type='image/png'
         sizes='32x32'
         href='/favicons/favicon-32x32.png'
       />
-      <link
+      {/* <link
         rel='icon'
         type='image/png'
         sizes='16x16'
@@ -35,9 +35,8 @@ const HeadContainer: FC<P> = ({ children }) => {
         rel='mask-icon'
         href='/favicons/safari-pinned-tab.svg'
         color='#5bbad5'
-      />
-      <meta name='msapplication-TileColor' content='#da532c' /> */}
-      {/* <meta name='theme-color' content='#ffffff' /> */}
+      /> */}
+      <meta name='msapplication-TileColor' content='#da532c' />
       {children}
     </Head>
   );

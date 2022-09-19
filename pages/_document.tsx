@@ -9,37 +9,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang='ja'>
         <Head>
-          {/* kokokara */}
-                <title>スタバのトッピング計算</title>
-      <meta charSet='utf-8' />
-      <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
-      <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-      <meta name='format-detection' content='telephone=no' />
-      <link
-        rel='apple-touch-icon'
-        sizes='180x180'
-        href='/favicons/apple-touch-icon.png'
-      />
-      <link
-        rel='icon'
-        type='image/png'
-        sizes='32x32'
-        href='/favicons/favicon-32x32.png'
-      />
-      <link
-        rel='icon'
-        type='image/png'
-        sizes='16x16'
-        href='/favicons/favicon-16x16.png'
-      />
-      <link rel='manifest' href='/favicons/site.webmanifest' />
-      <link
-        rel='mask-icon'
-        href='/favicons/safari-pinned-tab.svg'
-        color='#5bbad5'
-      />
-      <meta name='msapplication-TileColor' content='#da532c' />
-      {/* ここまで */}
           <meta name='theme-color' content={theme.palette.primary.main} />
           <link
             rel='stylesheet'
@@ -49,7 +18,7 @@ export default class MyDocument extends Document {
             rel='stylesheet'
             href='https://fonts.googleapis.com/icon?family=Material+Icons'
           />
-          {/* {(this.props as any).emotionStyleTags} */}
+          {(this.props as any).emotionStyleTags}
         </Head>
         <body>
           <Main />
@@ -60,32 +29,32 @@ export default class MyDocument extends Document {
   }
 }
 
-// MyDocument.getInitialProps = async (ctx) => {
-//   const originalRenderPage = ctx.renderPage;
-//   const cache = createEmotionCache();
-//   const { extractCriticalToChunks } = createEmotionServer(cache);
+MyDocument.getInitialProps = async (ctx) => {
+  const originalRenderPage = ctx.renderPage;
+  const cache = createEmotionCache();
+  const { extractCriticalToChunks } = createEmotionServer(cache);
 
-//   ctx.renderPage = () =>
-//     originalRenderPage({
-//       enhanceApp: (App: any) =>
-//         function EnhanceApp(props) {
-//           return <App emotionCache={cache} {...props} />;
-//         },
-//     });
+  ctx.renderPage = () =>
+    originalRenderPage({
+      enhanceApp: (App: any) =>
+        function EnhanceApp(props) {
+          return <App emotionCache={cache} {...props} />;
+        },
+    });
 
-//   const initialProps = await Document.getInitialProps(ctx);
-//   const emotionStyles = extractCriticalToChunks(initialProps.html);
-//   const emotionStyleTags = emotionStyles.styles.map((style) => (
-//     <style
-//       data-emotion={`${style.key} ${style.ids.join(' ')}`}
-//       key={style.key}
-//       // eslint-disable-next-line react/no-danger
-//       dangerouslySetInnerHTML={{ __html: style.css }}
-//     />
-//   ));
+  const initialProps = await Document.getInitialProps(ctx);
+  const emotionStyles = extractCriticalToChunks(initialProps.html);
+  const emotionStyleTags = emotionStyles.styles.map((style) => (
+    <style
+      data-emotion={`${style.key} ${style.ids.join(' ')}`}
+      key={style.key}
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{ __html: style.css }}
+    />
+  ));
 
-//   return {
-//     ...initialProps,
-//     emotionStyleTags,
-//   };
-// };
+  return {
+    ...initialProps,
+    emotionStyleTags,
+  };
+};
