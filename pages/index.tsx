@@ -1,7 +1,8 @@
 import type { NextPage } from 'next';
 import { Product } from '../src/types/productType';
 import { useState } from 'react';
-import { Container } from '@mui/material';
+// import { Container } from '@mui/material';
+import Container from '@mui/material/Container';
 import Header from '../src/components/organisms/Header';
 import Search from '../src/components/molcules/Search';
 import HeadContainer from '../src/components/organisms/HeadContainer';

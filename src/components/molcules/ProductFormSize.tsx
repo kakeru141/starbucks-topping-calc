@@ -1,4 +1,7 @@
-import { FormControlLabel, Radio, RadioGroup } from '@mui/material';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+// import { FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import { ChangeEvent, Dispatch, FC, memo, SetStateAction } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { totalPriceAtom } from '../../recoil/atom/totalPriceAtom';
