@@ -1,15 +1,10 @@
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
-// import {
-//   List,
-//   ListItem,
-//   ListItemButton,
-//   ListItemText,
-//   Typography,
-// } from '@mui/material';
+import {
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Typography,
+} from '@mui/material';
 import Link from 'next/link';
 import { FC, memo } from 'react';
 import { Product } from '../../types/productType';

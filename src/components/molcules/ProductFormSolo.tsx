@@ -1,6 +1,4 @@
-import Switch from '@mui/material/Switch';
-import FormControlLabel from '@mui/material/FormControlLabel';
-// import { FormControlLabel, Switch } from '@mui/material';
+import { FormControlLabel, Switch } from '@mui/material';
 import { ChangeEvent, Dispatch, FC, memo, SetStateAction } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { totalPriceAtom } from '../../recoil/atom/totalPriceAtom';

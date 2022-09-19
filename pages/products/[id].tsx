@@ -1,8 +1,4 @@
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-// import { Box, Button, Container, Typography } from '@mui/material';
+import { Box, Button, Container, Typography } from '@mui/material';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -15,7 +11,7 @@ import Header from '../../src/components/organisms/Header';
 import ResultField from '../../src/components/organisms/ResultField';
 import { totalPriceAtom } from '../../src/recoil/atom/totalPriceAtom';
 import { Product } from '../../src/types/productType';
-import fetch from 'node-fetch';
+// import fetch from 'node-fetch';
 
 type P = {
   data: Product;

@@ -1,17 +1,13 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { RecoilRoot } from 'recoil';
-import {createTheme,ThemeProvider} from '@mui/material';
-import Box from '@mui/material/Box';
-import CircularProgress from '@mui/material/CircularProgress';
-import CssBaseline from '@mui/material/CssBaseline';
-// import {
-//   Box,
-//   CircularProgress,
-//   createTheme,
-//   CssBaseline,
-//   ThemeProvider,
-// } from '@mui/material';
+import {
+  Box,
+  CircularProgress,
+  createTheme,
+  CssBaseline,
+  ThemeProvider,
+} from '@mui/material';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 

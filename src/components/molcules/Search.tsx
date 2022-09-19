@@ -1,6 +1,4 @@
-import InputAdornment from '@mui/material/InputAdornment';
-import TextField from '@mui/material/TextField';
-// import { InputAdornment, TextField } from '@mui/material';
+import { InputAdornment, TextField } from '@mui/material';
 import { ChangeEvent, Dispatch, FC, memo, SetStateAction } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { Product } from '../../types/productType';

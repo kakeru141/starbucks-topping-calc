@@ -1,6 +1,4 @@
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-// import { Box, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC } from 'react';
