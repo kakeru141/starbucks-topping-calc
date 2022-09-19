@@ -24,24 +24,25 @@ export const ProductItem: NextPage<P> = ({ data }) => {
   const [resultPrice, setResultPrice] = useState(0);
   const [isShop, setIsShop] = useState(true);
 
+  const calclation = () => {
+    if (isShop) {
+      setResultPrice(
+        Object.values(totalPrice.shop.price).reduce(
+          (prev, current) => prev + current
+        )
+      );
+    } else {
+      setResultPrice(
+        Object.values(totalPrice.takeout.price).reduce(
+          (prev, current) => prev + current
+        )
+      );
+    }
+  };
   useEffect(() => {
-    const calclation = () => {
-      if (isShop) {
-        setResultPrice(
-          Object.values(totalPrice.shop.price).reduce(
-            (prev, current) => prev + current
-          )
-        );
-      } else {
-        setResultPrice(
-          Object.values(totalPrice.takeout.price).reduce(
-            (prev, current) => prev + current
-          )
-        );
-      }
-    };
     calclation();
-  }, [totalPrice, isShop, resultPrice]);
+  }, [totalPrice, isShop]);
+  // }, [totalPrice, isShop, resultPrice]);
 
   return (
     <>
