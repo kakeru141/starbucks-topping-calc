@@ -48,7 +48,7 @@ export const ProductItem: NextPage<P> = ({ data }) => {
       <HeadContainer>
         <meta
           name='description'
-          content={`${data.productName}トッピングを選択するだけで、合計価格を計算します。注文時にもたつきたくない、1000円チケットをギリギリまで使いたい方は是非活用してください`}
+          content={`${data.productName}のトッピングを選択するだけで、合計価格を計算します。注文時にもたつきたくない、1000円チケットをギリギリまで使いたい方は是非活用してください`}
         />
         <meta
           name='keywords'
@@ -102,251 +102,249 @@ export const ProductItem: NextPage<P> = ({ data }) => {
             {fetchData.productName}
           </Typography>
         </Box>
-        <form>
-          <Box
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}>
+          <Typography
+            component='h2'
             sx={{
-              display: 'flex',
-              justifyContent: 'center',
+              position: 'relative',
+              p: 2,
+              mt: 4,
+              fontWeight: 'bold',
+              '&::before, &::after': {
+                content: '""',
+                position: 'absolute',
+                top: '50%',
+                width: 30,
+                height: '1px',
+                bgcolor: '#bdbdbd',
+              },
+              '&::before': {
+                left: -20,
+              },
+              '&::after': {
+                right: -20,
+              },
             }}>
-            <Typography
-              component='h2'
-              sx={{
-                position: 'relative',
-                p: 2,
-                mt: 4,
-                fontWeight: 'bold',
-                '&::before, &::after': {
-                  content: '""',
-                  position: 'absolute',
-                  top: '50%',
-                  width: 30,
-                  height: '1px',
-                  bgcolor: '#bdbdbd',
-                },
-                '&::before': {
-                  left: -20,
-                },
-                '&::after': {
-                  right: -20,
-                },
-              }}>
-              サイズ
-            </Typography>
-          </Box>
-          <ProductFormSize
-            data={fetchData.size}
-            setData={setFetchData}
-            isShop={isShop}
-          />
-          <Box
+            サイズ
+          </Typography>
+        </Box>
+        <ProductFormSize
+          data={fetchData.size}
+          setData={setFetchData}
+          isShop={isShop}
+        />
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}>
+          <Typography
+            component='h2'
             sx={{
-              display: 'flex',
-              justifyContent: 'center',
+              position: 'relative',
+              p: 2,
+              fontWeight: 'bold',
+              '&::before, &::after': {
+                content: '""',
+                position: 'absolute',
+                top: '50%',
+                width: 30,
+                height: '1px',
+                bgcolor: '#bdbdbd',
+              },
+              '&::before': {
+                left: -20,
+              },
+              '&::after': {
+                right: -20,
+              },
             }}>
-            <Typography
-              component='h2'
-              sx={{
-                position: 'relative',
-                p: 2,
-                fontWeight: 'bold',
-                '&::before, &::after': {
-                  content: '""',
-                  position: 'absolute',
-                  top: '50%',
-                  width: 30,
-                  height: '1px',
-                  bgcolor: '#bdbdbd',
-                },
-                '&::before': {
-                  left: -20,
-                },
-                '&::after': {
-                  right: -20,
-                },
-              }}>
-              トッピング
-            </Typography>
-          </Box>
-          {/* <ProductFormSolo
-            data={fetchData.topping.rawChocolateWhip}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.coffeeCream}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.allMilk}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.wristletShot}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.changeEspresso}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.honeyPlus}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.chocoSaucePlus}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.caramelSaucePlus}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.cocoa}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.cinnamon}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.vanillaPlus}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.caramelPlus}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.classicPlus}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.mochaPlus}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.whiteMochaPlus}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.chaiPlus}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.valenciaPlus}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.gingerPlus}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.whipPlus}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.steamMilkPlus}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.foamMilkPlus}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.chocolateChipPlus}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.decaf}
-            setData={setFetchData}
-            isCoffeeRoast={
-              !fetchData.topping.coffeeRoastPlusGroup.content
-                .noneCoffeeRoastPlusGroup.select
-            }
-          />
-          <ProductFormSolo
-            data={fetchData.topping.mousseFoam}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.teaLeafChange}
-            setData={setFetchData}
-          />
-          <ProductFormSolo
-            data={fetchData.topping.teaLeafPlus}
-            setData={setFetchData}
-          /> */}
-          <ProductFormGroup
-            data={fetchData.topping.whipGroup}
-            setData={setFetchData}
-            isShop={isShop}
-          />
-          <ProductFormGroup
-            data={fetchData.topping.milkGroup}
-            setData={setFetchData}
-            isShop={isShop}
-          />
-          <ProductFormGroup
-            data={fetchData.topping.changeMilkGroup}
-            setData={setFetchData}
-            isShop={isShop}
-          />
-          <ProductFormGroup
-            data={fetchData.topping.powderGroup}
-            setData={setFetchData}
-            isShop={isShop}
-          />
-          <ProductFormGroup
-            data={fetchData.topping.sauceGroup}
-            setData={setFetchData}
-            isShop={isShop}
-          />
-          <ProductFormGroup
-            data={fetchData.topping.syrupGroup}
-            setData={setFetchData}
-            isShop={isShop}
-          />
-          <ProductFormGroup
-            data={fetchData.topping.changeSyrupGroup}
-            setData={setFetchData}
-            isShop={isShop}
-          />
-          <ProductFormGroup
-            data={fetchData.topping.chipGroup}
-            setData={setFetchData}
-            isShop={isShop}
-          />
-          <ProductFormGroup
-            data={fetchData.topping.iceGroup}
-            setData={setFetchData}
-            isShop={isShop}
-          />
-          <ProductFormGroup
-            data={fetchData.topping.hotGroup}
-            setData={setFetchData}
-            isShop={isShop}
-          />
-          <ProductFormGroup
-            data={fetchData.topping.shotPlusGroup}
-            setData={setFetchData}
-            isShop={isShop}
-          />
-          <ProductFormGroup
-            data={fetchData.topping.coffeeRoastPlusGroup}
-            setData={setFetchData}
-            isShop={isShop}
-            isDecaf={!fetchData.topping.decaf.select}
-          />
-          <ProductFormGroup
-            data={fetchData.topping.citrusPulpPlusGroup}
-            setData={setFetchData}
-            isShop={isShop}
-          />
-          <ProductFormGroup
-            data={fetchData.topping.teaLeafAddGroup}
-            setData={setFetchData}
-            isShop={isShop}
-          />
-        </form>
+            トッピング
+          </Typography>
+        </Box>
+        <ProductFormSolo
+          data={fetchData.topping.rawChocolateWhip}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.coffeeCream}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.allMilk}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.wristletShot}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.changeEspresso}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.honeyPlus}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.chocoSaucePlus}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.caramelSaucePlus}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.cocoa}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.cinnamon}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.vanillaPlus}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.caramelPlus}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.classicPlus}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.mochaPlus}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.whiteMochaPlus}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.chaiPlus}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.valenciaPlus}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.gingerPlus}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.whipPlus}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.steamMilkPlus}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.foamMilkPlus}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.chocolateChipPlus}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.decaf}
+          setData={setFetchData}
+          isCoffeeRoast={
+            !fetchData.topping.coffeeRoastPlusGroup.content
+              .noneCoffeeRoastPlusGroup.select
+          }
+        />
+        <ProductFormSolo
+          data={fetchData.topping.mousseFoam}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.teaLeafChange}
+          setData={setFetchData}
+        />
+        <ProductFormSolo
+          data={fetchData.topping.teaLeafPlus}
+          setData={setFetchData}
+        />
+        <ProductFormGroup
+          data={fetchData.topping.whipGroup}
+          setData={setFetchData}
+          isShop={isShop}
+        />
+        <ProductFormGroup
+          data={fetchData.topping.milkGroup}
+          setData={setFetchData}
+          isShop={isShop}
+        />
+        <ProductFormGroup
+          data={fetchData.topping.changeMilkGroup}
+          setData={setFetchData}
+          isShop={isShop}
+        />
+        <ProductFormGroup
+          data={fetchData.topping.powderGroup}
+          setData={setFetchData}
+          isShop={isShop}
+        />
+        <ProductFormGroup
+          data={fetchData.topping.sauceGroup}
+          setData={setFetchData}
+          isShop={isShop}
+        />
+        <ProductFormGroup
+          data={fetchData.topping.syrupGroup}
+          setData={setFetchData}
+          isShop={isShop}
+        />
+        <ProductFormGroup
+          data={fetchData.topping.changeSyrupGroup}
+          setData={setFetchData}
+          isShop={isShop}
+        />
+        <ProductFormGroup
+          data={fetchData.topping.chipGroup}
+          setData={setFetchData}
+          isShop={isShop}
+        />
+        <ProductFormGroup
+          data={fetchData.topping.iceGroup}
+          setData={setFetchData}
+          isShop={isShop}
+        />
+        <ProductFormGroup
+          data={fetchData.topping.hotGroup}
+          setData={setFetchData}
+          isShop={isShop}
+        />
+        <ProductFormGroup
+          data={fetchData.topping.shotPlusGroup}
+          setData={setFetchData}
+          isShop={isShop}
+        />
+        <ProductFormGroup
+          data={fetchData.topping.coffeeRoastPlusGroup}
+          setData={setFetchData}
+          isShop={isShop}
+          isDecaf={!fetchData.topping.decaf.select}
+        />
+        <ProductFormGroup
+          data={fetchData.topping.citrusPulpPlusGroup}
+          setData={setFetchData}
+          isShop={isShop}
+        />
+        <ProductFormGroup
+          data={fetchData.topping.teaLeafAddGroup}
+          setData={setFetchData}
+          isShop={isShop}
+        />
       </Container>
       <Button
         onClick={() => {
