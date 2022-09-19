@@ -87,7 +87,7 @@ const ResultField: FC<P> = memo(({ resultPrice, isShop, setIsShop, data }) => {
           control={<Switch checked={isShop} onChange={changeIsShop} />}
           label='店内価格'
         />
-        <Typography variant='h6' sx={{ m: 'auto' }}>
+        <Typography component='p' variant='h6' sx={{ m: 'auto' }}>
           {`${resultPrice} 円`}
         </Typography>
         <Button variant='contained' onClick={openToggle}>
