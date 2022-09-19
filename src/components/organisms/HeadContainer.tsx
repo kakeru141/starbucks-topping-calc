@@ -8,7 +8,7 @@ type P = {
 const HeadContainer: FC<P> = ({ children }) => {
   return (
     <Head>
-      <title>スタバのトッピング計算</title>
+      {/* <title>スタバのトッピング計算</title>
       <meta charSet='utf-8' />
       <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
@@ -36,8 +36,8 @@ const HeadContainer: FC<P> = ({ children }) => {
         href='/favicons/safari-pinned-tab.svg'
         color='#5bbad5'
       />
-      <meta name='msapplication-TileColor' content='#da532c' />
-      <meta name='theme-color' content='#ffffff' />
+      <meta name='msapplication-TileColor' content='#da532c' /> */}
+      {/* <meta name='theme-color' content='#ffffff' /> */}
       {children}
     </Head>
   );
