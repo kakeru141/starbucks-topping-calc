@@ -5,14 +5,14 @@ const nextConfig = {
   staticPageGenerationTimeout: 120,
 };
 
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-});
+// const withBundleAnalyzer = require('@next/bundle-analyzer')({
+//   enabled: process.env.ANALYZE === 'true',
+// });
 
-module.exports = withBundleAnalyzer({
-  reactStrictMode: true,
-  swcMinify: true,
-  staticPageGenerationTimeout: 120,
-});
+// module.exports = withBundleAnalyzer({
+//   reactStrictMode: true,
+//   swcMinify: true,
+//   staticPageGenerationTimeout: 120,
+// });
 
-// module.exports = nextConfig;
+module.exports = nextConfig;
