@@ -167,7 +167,7 @@ export const ProductItem: NextPage<P> = ({ data }) => {
               トッピング
             </Typography>
           </Box>
-          <ProductFormSolo
+          {/* <ProductFormSolo
             data={fetchData.topping.rawChocolateWhip}
             setData={setFetchData}
           />
@@ -274,7 +274,7 @@ export const ProductItem: NextPage<P> = ({ data }) => {
           <ProductFormSolo
             data={fetchData.topping.teaLeafPlus}
             setData={setFetchData}
-          />
+          /> */}
           <ProductFormGroup
             data={fetchData.topping.whipGroup}
             setData={setFetchData}
