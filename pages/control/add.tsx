@@ -1,6 +1,6 @@
 import { FormEvent } from 'react';
 import axios from 'axios';
-import { RecoilRoot, useRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { useRouter } from 'next/router';
 import { addProductAtom } from '../../src/recoil/atom/addProductAtom';
 import HeadContainer from '../../src/components/organisms/HeadContainer';
@@ -27,7 +27,7 @@ const Add: NextPage = () => {
   };
 
   return (
-    <RecoilRoot>
+    <>
       <HeadContainer>
         <meta name='robots' content='noindex' />
       </HeadContainer>
@@ -37,7 +37,7 @@ const Add: NextPage = () => {
           setProductData={setAddProduct}
         />
       </Auth>
-    </RecoilRoot>
+    </>
   );
 };
 

@@ -7,7 +7,6 @@ import Search from '../src/components/molcules/Search';
 import HeadContainer from '../src/components/organisms/HeadContainer';
 import ProductCategory from '../src/components/organisms/ProductCategory';
 import fetch from 'node-fetch';
-import { RecoilRoot } from 'recoil';
 
 type P = {
   datas: Product[];
@@ -17,7 +16,7 @@ const Home: NextPage<P> = ({ datas }) => {
   const [searchDatas, setSearchDatas] = useState(datas);
 
   return (
-    <RecoilRoot>
+    <>
       <HeadContainer>
         <meta
           name='description'
@@ -71,7 +70,7 @@ const Home: NextPage<P> = ({ datas }) => {
           name='others'
         />
       </Container>
-    </RecoilRoot>
+    </>
   );
 };
 

@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { RecoilRoot } from 'recoil';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -40,10 +41,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     );
   } else {
     return (
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <RecoilRoot>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </RecoilRoot>
     );
   }
 }

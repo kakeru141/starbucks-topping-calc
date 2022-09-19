@@ -2,7 +2,7 @@ import { Box, Button, Container, Typography } from '@mui/material';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { RecoilRoot, useRecoilValue } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import ProductFormGroup from '../../src/components/molcules/ProductFormGroup';
 import ProductFormSize from '../../src/components/molcules/ProductFormSize';
 import ProductFormSolo from '../../src/components/molcules/ProductFormSolo';
@@ -44,7 +44,7 @@ export const ProductItem: NextPage<P> = ({ data }) => {
   }, [totalPrice, isShop, resultPrice]);
 
   return (
-    <RecoilRoot>
+    <>
       <HeadContainer>
         <meta
           name='description'
@@ -362,7 +362,7 @@ export const ProductItem: NextPage<P> = ({ data }) => {
         setIsShop={setIsShop}
         data={data}
       />
-    </RecoilRoot>
+    </>
   );
 };
 

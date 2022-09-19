@@ -46,7 +46,7 @@ const ResultField: FC<P> = memo(({ resultPrice, isShop, setIsShop, data }) => {
   return (
     <>
       <Paper
-        elevation={6}
+        elevation={8}
         sx={
           isTop
             ? {
