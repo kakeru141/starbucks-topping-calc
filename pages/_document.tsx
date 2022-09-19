@@ -18,7 +18,7 @@ export default class MyDocument extends Document {
             rel='stylesheet'
             href='https://fonts.googleapis.com/icon?family=Material+Icons'
           />
-          {(this.props as any).emotionStyleTags}
+          {/* {(this.props as any).emotionStyleTags} */}
         </Head>
         <body>
           <Main />
@@ -29,32 +29,32 @@ export default class MyDocument extends Document {
   }
 }
 
-MyDocument.getInitialProps = async (ctx) => {
-  const originalRenderPage = ctx.renderPage;
-  const cache = createEmotionCache();
-  const { extractCriticalToChunks } = createEmotionServer(cache);
+// MyDocument.getInitialProps = async (ctx) => {
+//   const originalRenderPage = ctx.renderPage;
+//   const cache = createEmotionCache();
+//   const { extractCriticalToChunks } = createEmotionServer(cache);
 
-  ctx.renderPage = () =>
-    originalRenderPage({
-      enhanceApp: (App: any) =>
-        function EnhanceApp(props) {
-          return <App emotionCache={cache} {...props} />;
-        },
-    });
+//   ctx.renderPage = () =>
+//     originalRenderPage({
+//       enhanceApp: (App: any) =>
+//         function EnhanceApp(props) {
+//           return <App emotionCache={cache} {...props} />;
+//         },
+//     });
 
-  const initialProps = await Document.getInitialProps(ctx);
-  const emotionStyles = extractCriticalToChunks(initialProps.html);
-  const emotionStyleTags = emotionStyles.styles.map((style) => (
-    <style
-      data-emotion={`${style.key} ${style.ids.join(' ')}`}
-      key={style.key}
-      // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{ __html: style.css }}
-    />
-  ));
+//   const initialProps = await Document.getInitialProps(ctx);
+//   const emotionStyles = extractCriticalToChunks(initialProps.html);
+//   const emotionStyleTags = emotionStyles.styles.map((style) => (
+//     <style
+//       data-emotion={`${style.key} ${style.ids.join(' ')}`}
+//       key={style.key}
+//       // eslint-disable-next-line react/no-danger
+//       dangerouslySetInnerHTML={{ __html: style.css }}
+//     />
+//   ));
 
-  return {
-    ...initialProps,
-    emotionStyleTags,
-  };
-};
+//   return {
+//     ...initialProps,
+//     emotionStyleTags,
+//   };
+// };
