@@ -377,13 +377,13 @@ export async function getStaticPaths() {
     }));
     return {
       paths,
-      fallback: false,
+      fallback: true,
     };
   } catch (err) {
     console.log(err);
     return {
       paths: [],
-      fallback: false,
+      fallback: true,
     };
   }
 }
