@@ -1,8 +1,8 @@
-import { Container, FormControlLabel, Switch, Typography } from '@mui/material';
 import { ChangeEvent, FC, memo } from 'react';
 import { useRecoilValue } from 'recoil';
 import { totalPriceAtom } from '../../recoil/atom/totalPriceAtom';
 import { Product } from '../../types/productType';
+import { Container, FormControlLabel, Switch, Typography } from '@mui/material';
 
 type P = {
   data: Product;

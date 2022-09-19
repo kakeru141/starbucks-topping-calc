@@ -1,17 +1,18 @@
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  FormControlLabel,
-  Radio,
-  RadioGroup,
-  Typography,
-} from '@mui/material';
+import { Accordion, AccordionSummary, Typography } from '@mui/material';
 import { ChangeEvent, Dispatch, FC, memo, SetStateAction } from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useSetRecoilState } from 'recoil';
 import { totalPriceAtom } from '../../recoil/atom/totalPriceAtom';
 import { Product } from '../../types/productType';
+import dynamic from 'next/dynamic';
+const AccordionDetails = dynamic(
+  () => import('@mui/material/AccordionDetails')
+);
+const RadioGroup = dynamic(() => import('@mui/material/RadioGroup'));
+const FormControlLabel = dynamic(
+  () => import('@mui/material/FormControlLabel')
+);
+const Radio = dynamic(() => import('@mui/material/Radio'));
 
 type P = {
   data: {

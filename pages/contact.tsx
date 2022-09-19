@@ -1,12 +1,15 @@
 import { Container } from '@mui/material';
 import axios from 'axios';
 import { NextPage } from 'next';
+import dynamic from 'next/dynamic';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import ContactMsg from '../src/components/molcules/ContactMsg';
-import ContactSended from '../src/components/molcules/ContactSended';
 import ContactForm from '../src/components/organisms/ContactForm';
 import HeadContainer from '../src/components/organisms/HeadContainer';
 import Header from '../src/components/organisms/Header';
+const ContactSended = dynamic(
+  () => import('../src/components/molcules/ContactSended')
+);
 
 const Contact: NextPage = () => {
   const [isSend, setIsSend] = useState(false);

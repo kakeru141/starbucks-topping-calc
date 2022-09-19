@@ -1,17 +1,18 @@
 import { FC, memo, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import {
-  Box,
-  Button,
-  Drawer,
-  IconButton,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-} from '@mui/material';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import IconButton from '@mui/material/IconButton';
 import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
+const Drawer = dynamic(() => import('@mui/material/Drawer'));
+const Box = dynamic(() => import('@mui/material/Box'));
+const Button = dynamic(() => import('@mui/material/Button'));
+const List = dynamic(() => import('@mui/material/List'));
+const ListItem = dynamic(() => import('@mui/material/ListItem'));
+const ListItemButton = dynamic(() => import('@mui/material/ListItemButton'));
+const ListItemText = dynamic(() => import('@mui/material/ListItemText'));
+const ArrowBackIosNewIcon = dynamic(
+  () => import('@mui/icons-material/ArrowBackIosNew')
+);
 
 const Menu: FC = memo(() => {
   const router = useRouter();

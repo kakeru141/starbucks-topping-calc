@@ -1,9 +1,7 @@
 import {
   Box,
   Button,
-  Drawer,
   FormControlLabel,
-  IconButton,
   Paper,
   Switch,
   Typography,
@@ -16,11 +14,14 @@ import {
   SetStateAction,
   useState,
 } from 'react';
-import Detail from './Detail';
 import { Product } from '../../types/productType';
-import CloseIcon from '@mui/icons-material/Close';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
+import dynamic from 'next/dynamic';
+const Drawer = dynamic(() => import('@mui/material/Drawer'));
+const IconButton = dynamic(() => import('@mui/material/IconButton'));
+const Detail = dynamic(() => import('./Detail'));
+const CloseIcon = dynamic(() => import('@mui/icons-material/Close'));
 
 type P = {
   resultPrice: number;
@@ -94,14 +95,13 @@ const ResultField: FC<P> = memo(({ resultPrice, isShop, setIsShop, data }) => {
         </Button>
       </Paper>
       <Drawer anchor='bottom' open={open} onClose={openToggle}>
-        <Button
+        <IconButton
           onClick={openToggle}
-          variant='outlined'
           sx={{
             m: '16px 16px 0 auto',
           }}>
-          <CloseIcon fontSize='medium' />
-        </Button>
+          <CloseIcon fontSize='large' />
+        </IconButton>
         <Detail
           data={data}
           isShop={isShop}

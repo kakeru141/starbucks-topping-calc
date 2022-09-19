@@ -1,12 +1,15 @@
 import { FormEvent } from 'react';
 import axios from 'axios';
-import EditAddFromFunctions from '../../src/components/molcules/EditAddFromFunctions';
 import { useRecoilState } from 'recoil';
 import { useRouter } from 'next/router';
 import { addProductAtom } from '../../src/recoil/atom/addProductAtom';
 import HeadContainer from '../../src/components/organisms/HeadContainer';
 import { NextPage } from 'next';
 import Auth from '../../src/components/templates/Auth';
+import dynamic from 'next/dynamic';
+const EditAddFromFunctions = dynamic(
+  () => import('../../src/components/molcules/EditAddFromFunctions')
+);
 
 const Add: NextPage = () => {
   const router = useRouter();

@@ -3,12 +3,15 @@ import { GetServerSideProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { FormEvent, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
-import EditAddFromFunctions from '../../../src/components/molcules/EditAddFromFunctions';
 import HeadContainer from '../../../src/components/organisms/HeadContainer';
 import Auth from '../../../src/components/templates/Auth';
 import { addProductAtom } from '../../../src/recoil/atom/addProductAtom';
 import { Product } from '../../../src/types/productType';
 import fetch from 'node-fetch';
+import dynamic from 'next/dynamic';
+const EditAddFromFunctions = dynamic(
+  () => import('../../../src/components/molcules/EditAddFromFunctions')
+);
 
 type P = {
   data: Product;

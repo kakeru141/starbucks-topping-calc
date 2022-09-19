@@ -3,19 +3,18 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Auth from '../../src/components/templates/Auth';
 import { Product } from '../../src/types/productType';
-import {
-  Container,
-  Box,
-  Button,
-  List,
-  ListItem,
-  ListItemText,
-} from '@mui/material';
-import axios from 'axios';
 import { useRouter } from 'next/router';
-import Search from '../../src/components/molcules/Search';
 import HeadContainer from '../../src/components/organisms/HeadContainer';
 import fetch from 'node-fetch';
+import dynamic from 'next/dynamic';
+import axios from 'axios';
+const Container = dynamic(() => import('@mui/material/Container'));
+const Box = dynamic(() => import('@mui/material/Box'));
+const Button = dynamic(() => import('@mui/material/Button'));
+const List = dynamic(() => import('@mui/material/List'));
+const ListItem = dynamic(() => import('@mui/material/ListItem'));
+const ListItemText = dynamic(() => import('@mui/material/ListItemText'));
+const Search = dynamic(() => import('../../src/components/molcules/Search'));
 
 type P = {
   datas: Product[];
