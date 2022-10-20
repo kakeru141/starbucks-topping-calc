@@ -18,6 +18,7 @@ const Home: NextPage<P> = ({ datas }) => {
   return (
     <>
       <HeadContainer>
+        <title>スタバのトッピング計算</title>
         <meta
           name='description'
           content='スタバのトッピングを選択するだけで、合計価格を計算します。注文時にもたつきたくない、1000円チケットをギリギリまで使いたい方は是非活用してください'

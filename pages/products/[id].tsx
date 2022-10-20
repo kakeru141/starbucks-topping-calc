@@ -46,6 +46,7 @@ export const ProductItem: NextPage<P> = ({ data }) => {
   return (
     <>
       <HeadContainer>
+        <title>{data.productName}</title>
         <meta
           name='description'
           content={`${data.productName}のトッピングを選択するだけで、合計価格を計算します。注文時にもたつきたくない、1000円チケットをギリギリまで使いたい方は是非活用してください`}
